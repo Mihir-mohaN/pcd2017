@@ -1,0 +1,27 @@
+#include <stdio.h>
+typedef struct{
+    float real;
+    float imaginary;
+}complex;
+
+main(){
+    complex number;
+    float a,b,c,d;
+    printf("enter real and imaginary part of the first complex number:");
+    scanf("%f%f",&a,&b);
+    
+    printf("enter real and imaginary part of the second complex number:");
+    scanf("%f%f",&c,&d);
+    float x = compreal(a,b);
+    float y = compimg(c,d);
+    
+    printf("sum=%f+i%f",x,y);
+}
+float compreal(float a,float b){
+    number.real=a+c;
+    return number.real;
+                  }
+float compimg(float c,float d){
+    number.imaginary=b+d;
+    return number.imaginary;    
+             }
