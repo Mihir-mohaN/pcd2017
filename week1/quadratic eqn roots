@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+typedef struct{
+    float r1;
+    float r2;
+}roots;
+main(){
+    roots qd;
+    float a,b,c,d;
+    printf("enter coefficents of x^2, x and the constant:");
+    scanf("%f%f%f",&a,&b,&c);
+    d=(b*b-4*a*c);
+    if(d=0){
+        qd.r1=(-b/2*a);
+        qd.r2=(-b/2*a);
+        printf("we have two equal roots and the roots are %f and %f",qd.r1,qd.r2);
+    }
+    else if(d>0){
+        qd.r1=((-b+sqrt(d))/2*a);
+        qd.r2=((-b-sqrt(d))/2*a);
+        printf("the roots are real and they are %f and %f",qd.r1,qd.r2);
+    }
+    else(d<0){
+        qd.r1=
+    }
+}
