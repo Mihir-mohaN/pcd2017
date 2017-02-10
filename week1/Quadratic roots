@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <math.h>
+typedef struct{
+	float r1,r2;
+}roots;
+
+typedef struct{
+	float real,imag;
+}complex;
+
+int main(){
+	roots qd;
+	complex num;
+	float a,b,c,d;
+	
+	printf("enter the coefficients of x^2, x and the constants:");
+	scanf("%f%f%f",&a,&b,&c);
+	d=b*b-4*a*c;
+	findroots(a,b,c);
+	printf("the roots of the quadratic equation are: %f and %f",qd.r1,qd.r2);
+	}
+    float findroots(float a,float b,float c){
+    	if(d=0){
+    	qd.r1=(-b/2*a);
+    	qd.r2=(-b/2*a);
+    	return qd.r1,qd.r2;
+    	}
+    	
+    	else if(d>0){
+    		num.real=(-b/2*a);
+    		num.imag=((sqrt(d))/2*a);
+    		
+    		qd.r1=(num.real+num.imag);
+    		qd.r2=(num.real-num.imag);
+    		
+    		return qd.r1,qd.r2;
+    	}
+    	
+    	else if(d<0){
+    		float i=sqrt(-1);
+    		num.real=(-b/2*a);
+    		num.imag=((sqrt(-d))/2*a);
+    		
+    		qd.r1=(num.real)+i*(num.imag);
+    		qd.r2=(num.real)-i*(num.imag);
+    		
+    		return qd.r1,qd.r2;
+    	}
