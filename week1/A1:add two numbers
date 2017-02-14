@@ -1,0 +1,15 @@
+#include<stdio.h>
+float findsum(float a,float b);
+int main(){
+	float a,b,c;
+	printf("enter two numbers to be added:");
+	scanf("%f%f",&a,&b);
+	c=findsum(a,b);
+	printf("the sum of the two numbers is:%f",c);
+	return 0;
+}
+float findsum(float a,float b){
+	float sum;
+	sum=a+b;
+	return sum;
+}
