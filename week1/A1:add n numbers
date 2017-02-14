@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+	float a,sum;
+	int i,n;
+	printf("how many numbers do you want to add:");
+	scanf("%d",&n);
+	for(i=1;i<=n;i++){
+		printf("enter %d number:",i);
+		scanf("%f",&a);
+		sum+=a;
+	}
+	printf("the sum is %f",sum);
+	return 0;		
+}
