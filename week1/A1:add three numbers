@@ -1,0 +1,15 @@
+#include<stdio.h>
+float findsum(float a,float b,float c);
+int main(){
+	float a,b,c,d;
+	printf("enter three numbers to be added:");
+	scanf("%f%f%f",&a,&b,&c);
+	d=findsum(a,b,c);
+	printf("the sum of the three numbers is:%f",d);
+	return 0;
+}
+float findsum(float a,float b,float c){
+	float sum;
+	sum=a+b+c;
+	return sum;
+}
