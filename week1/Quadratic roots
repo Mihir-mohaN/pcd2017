@@ -18,6 +18,7 @@ int main(){
 	d=b*b-4*a*c;
 	findroots(a,b,c);
 	printf("the roots of the quadratic equation are: %f and %f",qd.r1,qd.r2);
+	return 0;
 	}
     float findroots(float a,float b,float c){
     	if(d=0){
