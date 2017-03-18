@@ -1,17 +1,17 @@
 #include<stdio.h>
-void get_matrix1(int a,int b,int mat1[a][b]);
-void get_matrix2(int c,int d,int mat2[c][d]);
-void display(int a,int b,int c,int d,int mat1[a][b],int mat2[c][d]);
-void mat_mult(int a,int b,int c,int d,int mat1[a][b],int mat2[c][d]);
+void get_matrix1(int a,int b,float mat1[a][b]);
+void get_matrix2(int c,int d,float mat2[c][d]);
+void display(int a,int b,int c,int d,float mat1[a][b],float mat2[c][d]);
+void mat_mult(int a,int b,int c,int d,float mat1[a][b],float mat2[c][d]);
 int main(){
 	int a,b,c,d;
 	printf("enter the number of rows and columns of the first matrix:");
 	scanf("%d%d",&a,&b);
-	int mat1[a][b];
+	float mat1[a][b];
 	get_matrix1(a,b,mat1);
 	printf("enter the number of rows and columns of the second matrix:");
 	scanf("%d%d",&c,&d);
-	int mat2[c][d];
+	float mat2[c][d];
 	get_matrix2(c,d,mat2);
 	display(a,b,c,d,mat1,mat2);
 	if(b!=c){
@@ -23,9 +23,10 @@ int main(){
 	return 0;
 }
 
-void mat_mult(int a,int b,int c,int d,int mat1[a][b],int mat2[c][d]){
-	int mat3[a][d];
-	int i,j,k,sum=0;
+void mat_mult(int a,int b,int c,int d,float mat1[a][b],float mat2[c][d]){
+	float mat3[a][d];
+	int i,j,k;
+	float sum=0;
 	for(i=0;i<a;i++){
 		for(j=0;j<d;j++){
 			for(k=0;k<c;k++){
@@ -38,45 +39,45 @@ void mat_mult(int a,int b,int c,int d,int mat1[a][b],int mat2[c][d]){
 	printf("result matrix:\n");
 	for(i=0;i<a;i++){
 		for(j=0;j<d;j++){
-			printf("%d\t",mat3[i][j]);
+			printf("%f\t",mat3[i][j]);
 		}
 		printf("\n");
 	}
 }
 
-void get_matrix1(int a,int b,int mat1[a][b]){
+void get_matrix1(int a,int b,float mat1[a][b]){
 	int i,j;
 	printf("enter elements of first matrix:");
 	for(i=0;i<a;i++){
 		for(j=0;j<b;j++){
-			scanf("%d",&mat1[i][j]);
+			scanf("%f",&mat1[i][j]);
 		}
 	}
 }
 
-void get_matrix2(int c,int d,int mat2[c][d]){
+void get_matrix2(int c,int d,float mat2[c][d]){
 	int i,j;
 	printf("enter elements of second matrix:");
 	for(i=0;i<c;i++){
 		for(j=0;j<d;j++){
-			scanf("%d",&mat2[i][j]);
+			scanf("%f",&mat2[i][j]);
 		}
 	}
 }
 
-void display(int a,int b,int c,int d,int mat1[a][b],int mat2[c][d]){
+void display(int a,int b,int c,int d,float mat1[a][b],float mat2[c][d]){
 	int i,j;
 	printf("matrix 1:\n");
 	for(i=0;i<a;i++){
 		for(j=0;j<b;j++){
-			printf("%d\t",mat1[i][j]);
+			printf("%f\t",mat1[i][j]);
 		}
 		printf("\n");
 	}
 	printf("matrix 2:\n");
 	for(i=0;i<c;i++){
 		for(j=0;j<d;j++){
-			printf("%d\t",mat1[i][j]);
+			printf("%f\t",mat1[i][j]);
 		}
 		printf("\n");
 	}
