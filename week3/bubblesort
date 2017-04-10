@@ -1,36 +1,41 @@
 #include<stdio.h>
-void sort(int n,float a[n]);
+
+void getval(int ,double a[]);
+void sort(int ,double a[]);
+
 int main(){
 	int n;
 	printf("enter how many numbers you want to sort:");
 	scanf("%d",&n);
-	float a[n];
+	double a[n];
 	getval(n,a);
 	sort(n,a);
 	return 0;
 }
 
-void getval(int n,float a[n]){
-	int i;
-	for(i=0;i<n;i++){
+void getval(int n,double a[n]){
+	for(int i=0;i<n;i++){
 		int j=i+1;
 		printf("enter %d number:",j);
-		scanf("%f",&a[i]);
+		scanf("%lf",&a[i]);
 	}
 }
-void sort(int n,float a[n]){
-	int k,i;
-	float x;
-	for(k=0;k<n;k++){
-		for(i=0;i<(n-1);i++){
+
+void sort(int n,double a[n]){
+	int flag=0;
+	for(int k=0;k<n;k++){
+		for(int i=0;i<(n-k-1);i++){
 			if(a[i]>a[i+1]){
-				x=a[i];
+				double x=a[i];
 				a[i]=a[i+1];
 				a[i+1]=x;
+				flag++;
 			}
 		}
+		if(flag==0) break;
+		else flag=0;
 	}
-	for(i=0;i<n;i++){
-		printf("%f\t",a[i]);
+	for(int i=0;i<n;i++){
+		printf("%lf\t",a[i]);
 	}
 }
