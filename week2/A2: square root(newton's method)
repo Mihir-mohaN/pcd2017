@@ -1,19 +1,19 @@
 #include<stdio.h>
 #include<math.h>
-float newt_sqrt(float n);
+double newt_sqrt(double );
 
 int main(){
-	float n;
+	double n;
 	printf("enter the number:");
-	scanf("%f",&n);
-	float result=newt_sqrt(n);
-	printf("the square root of the number is %f",result);
+	scanf("%lf",&n);
+	double result=newt_sqrt(n);
+	printf("the square root of the number is %lf",result);
 	return 0;
 }
 
-float newt_sqrt(float n){
-	float diff,prev;
-	float x=10;
+double newt_sqrt(double n){
+	double diff,prev;
+	double x=10;
 	do{
 		prev=x;
 		x=x-((x*x-n)/(2*x));
