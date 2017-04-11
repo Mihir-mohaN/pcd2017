@@ -1,22 +1,23 @@
 #include<stdio.h>
 
-void getval(int ,double a[]);
+void input(int ,double a[]);
 void sort(int ,double a[]);
+void output(int ,double a[]);
 
 int main(){
 	int n;
 	printf("enter how many numbers you want to sort:");
 	scanf("%d",&n);
 	double a[n];
-	getval(n,a);
+	input(n,a);
 	sort(n,a);
+	output(n,a);
 	return 0;
 }
 
-void getval(int n,double a[n]){
+void input(int n,double a[n]){
 	for(int i=0;i<n;i++){
-		int j=i+1;
-		printf("enter %d number:",j);
+		printf("enter %d number:",i+1);
 		scanf("%lf",&a[i]);
 	}
 }
@@ -35,7 +36,10 @@ void sort(int n,double a[n]){
 		if(flag==0) break;
 		else flag=0;
 	}
-	for(int i=0;i<n;i++){
+}
+
+void output(int n,double a[n]){
+	for(int i=0;i<n;i++)
 		printf("%lf\t",a[i]);
 	}
-}
+
