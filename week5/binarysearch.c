@@ -15,11 +15,17 @@ int main(){
 		
 	sort(n,names);
 	
+	printf("list of names:\n");
+	for(int i=0;i<=n;i++)
+		puts(names[i]);
+	
 	char target[100];
 	printf("enter the name you want to search for:");
 	gets(target);
 	
 	int x=search(n,names,target);
+	if(x==0)
+		printf("%s not found",target);
 	
 	printf("it is the %d name",x);
 	return 0;
@@ -48,5 +54,10 @@ int search(int n,char a[n][100],char b[100]){
 			low=mid+1;
 		count++;	
 	}while(strcmp(b,a[mid])!=0);
-	return count;
+	
+	if(strcmp(b,a[mid])==0)
+		return count;
+	
+	else
+		return 0;
 }
