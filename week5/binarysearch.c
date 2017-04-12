@@ -2,6 +2,7 @@
 #include<string.h>
 
 void sort(int ,char a[][100]);
+int search(int ,char a[][100],char b[]);
 
 int main(){
 	int n;
@@ -12,17 +13,15 @@ int main(){
 	for(int i=0;i<=n;i++)
 		gets(names[i]);
 		
-	for(int i=0;i<=n;i++)
-		puts(names[i]);
-	
 	sort(n,names);
 	
+	char target[100];
 	printf("enter the name you want to search for:");
 	gets(target);
 	
-	for(int i=0;i<=n;i++)
-		puts(names[i]);
-
+	int x=search(n,names,target);
+	
+	printf("it is the %d name",x);
 	return 0;
 }
 
@@ -37,4 +36,17 @@ void sort(int n, char a[n][100]){
 			}
 		}
 	}
+}
+
+int search(int n,char a[n][100],char b[100]){
+	int low=0,high=n,mid,count=0;
+	do{
+		mid=(low+high)/2;
+		if(strcmp(b,a[mid])<0)
+			high=mid-1;
+		else
+			low=mid+1;
+		count++;	
+	}while(strcmp(b,a[mid])!=0);
+	return count;
 }
