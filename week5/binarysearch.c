@@ -9,13 +9,13 @@ int main(){
 	printf("enter how many names you want to enter:");
 	scanf("%d",&n);
 	char names[n][100];
-	printf("enter the names:");
+	printf("enter the names:\n");
 	for(int i=0;i<=n;i++)
 		gets(names[i]);
 		
 	sort(n,names);
 	
-	printf("list of names:\n");
+	printf("\nlist of names:");
 	for(int i=0;i<=n;i++)
 		puts(names[i]);
 	
@@ -26,8 +26,8 @@ int main(){
 	int x=search(n,names,target);
 	if(x==0)
 		printf("%s not found",target);
-	
-	printf("it is the %d name",x);
+	else
+		printf("it is the %d name",x);
 	return 0;
 }
 
@@ -45,18 +45,17 @@ void sort(int n, char a[n][100]){
 }
 
 int search(int n,char a[n][100],char b[100]){
-	int low=0,high=n,mid,count=0;
+	int low=0,high=n,mid;
 	do{
 		mid=(low+high)/2;
 		if(strcmp(b,a[mid])<0)
 			high=mid-1;
 		else
-			low=mid+1;
-		count++;	
-	}while(strcmp(b,a[mid])!=0);
+			low=mid+1;	
+	}while(strcmp(b,a[mid])!=0 && low<=high);
 	
 	if(strcmp(b,a[mid])==0)
-		return count;
+		return mid;
 	
 	else
 		return 0;
