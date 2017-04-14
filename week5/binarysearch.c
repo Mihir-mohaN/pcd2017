@@ -11,7 +11,7 @@ int main(){
 	char names[n][100];
 	printf("enter the names:\n");
 	for(int i=0;i<=n;i++)
-		gets(names[i]);
+		fgets(names[i],sizeof(names[i]),stdin);
 		
 	sort(n,names);
 	
@@ -21,7 +21,7 @@ int main(){
 	
 	char target[100];
 	printf("enter the name you want to search for:");
-	gets(target);
+	fgets(target,sizeof(target),stdin);
 	
 	int x=search(n,names,target);
 	if(x==0)
