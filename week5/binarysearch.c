@@ -32,6 +32,7 @@ int main(){
 }
 
 void sort(int n, char a[n][100]){
+	int flag=0;
 	char temp[100];
 	for(int i=0;i<=n;i++){
 		for(int j=0;j<=n-i-1;j++){
@@ -39,8 +40,11 @@ void sort(int n, char a[n][100]){
 				strcpy(temp,a[j]);
 				strcpy(a[j],a[j+1]);
 				strcpy(a[j+1],temp);
+				flag++;
 			}
 		}
+		if(flag==0) break;
+		else flag=0;
 	}
 }
 
