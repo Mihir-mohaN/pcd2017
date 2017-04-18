@@ -1,15 +1,12 @@
 #include<stdio.h>
 
-void string_copy(char *,char *,int );
+void string_copy(char *,char *);
 
 int main(){
-	char a[10];
-	int i;
+	char a[100],b[100];
 	printf("enter string:");
-	fgets(a,sizeof(a),stdin);
-	for(i=0;a[i]!='\0';i++);
-	char b[i];
-	string_copy(a,b,i);
+	fgets(a,100,stdin);
+	string_copy(a,b);
 	printf("original string:\n");
 	fputs(a,stdout);
 	printf("copied string:\n");
@@ -17,7 +14,9 @@ int main(){
 	return 0;
 }
 
-void string_copy(char a[],char b[],int i){
-	for(int k=0;k<i;k++)
-		b[k]=a[k];
+void string_copy(char a[],char b[]){
+	int i;
+	for(i=0;a[i]!='\0';i++)
+		b[i]=a[i];
+	b[i]='\0';
 }
